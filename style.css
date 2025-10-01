@@ -1,0 +1,208 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* encabezado */
+.header {
+  height: 60px;
+  background: linear-gradient(135deg, #1f2937 60%, #111827 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* contenedor */
+.container {
+  flex: 1;
+  display: flex;
+  height: calc(100% - 60px);
+}
+
+/* sidebar */
+.sidebar {
+  width: 240px;
+  background: #1f2937;
+  color: #fff;
+  padding: 20px;
+  flex-shrink: 0;
+}
+.sidebar h2 { text-align:center; margin:0 0 20px 0; font-size:18px; }
+.sidebar ul { list-style: none; padding: 0; margin: 0; }
+.sidebar ul li { margin-bottom: 8px; }
+.sidebar a { color: #fff; text-decoration: none; display:block; padding:8px 10px; border-radius:6px; }
+.sidebar a:hover { background:#374151; }
+
+.submenu { display: none; margin-left: 8px; }
+.submenu li a { padding-left: 18px; font-size:14px; }
+
+/* main */
+.main {
+  padding: 20px;
+  background: #f3f4f6;
+  width: calc(100% - 240px);
+  overflow: auto;
+}
+
+/* tabla */
+/* tabla minimalista */
+.table-custom {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 14px;
+}
+
+.table-custom th, .table-custom td {
+  padding: 10px 8px;
+  text-align: left;
+}
+
+.table-custom th {
+  background: #f3f4f6;  /* gris muy claro */
+  color: #111827;       /* gris oscuro */
+  font-weight: bold;
+  border-bottom: 2px solid #d1d5db; /* solo línea abajo */
+}
+
+.table-custom td {
+  border-bottom: 1px solid #e5e7eb; /* línea separadora en filas */
+}
+
+.table-custom tr:last-child td {
+  border-bottom: none; /* quita línea de la última fila */
+}
+
+/* efecto hover */
+.table-custom tbody tr:hover {
+  background: #f9fafb;
+}
+
+
+
+/* botones */
+.btn {
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:6px;
+  text-decoration:none;
+  font-size:13px;
+  margin-right:6px;
+}
+.btn-primary { background:#0ea5a4; color:#fff; }
+.btn-edit { background:#3b82f6; color:#fff; }
+.btn-delete { background:#ef4444; color:#fff; }
+
+/* formularios */
+.form-row { margin-bottom:8px; }
+.form-row input, .form-row select {
+  width:100%;
+  padding:8px;
+  border:1px solid #d1d5db;
+  border-radius:6px;
+}
+.alert { padding:10px; border-radius:6px; margin-bottom:10px; }
+.alert-success { background:#dcfce7; color:#065f46; }
+.alert-error { background:#fee2e2; color:#991b1b; }
+
+.btn-primary {
+  background: #0ea5a4;
+  color: #fff;
+  font-size: 15px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 0; /* ← aquí lo dejamos cuadrado */
+  cursor: pointer;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* espacio entre el texto y el botón */
+  margin-bottom: 16px;
+}
+
+/* --- MODAL --- */
+
+/* Fondo semitransparente */
+#modal-confirmar .modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 999;
+}
+
+/* Caja centrada */
+#modal-confirmar .modal-box {
+  position: fixed;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  background: #f0f8ff; /* azul muy claro */
+  padding: 20px 25px;
+  border-radius: 8px;
+  border: 1px solid #90caf9;
+  z-index: 1000;
+  width: 350px;
+  max-width: 90%;
+  text-align: center;
+  font-family: sans-serif;
+  color: #0d47a1;
+}
+
+/* Título */
+#modal-confirmar .modal-box h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #1565c0;
+  font-weight: 600;
+}
+
+/* Acciones */
+#modal-confirmar .modal-actions {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Botones planos */
+#modal-confirmar .modal-actions button {
+  background: #2196f3;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: none !important;
+  outline: none !important;
+  transition: background 0.2s;
+}
+
+/* Hover */
+#modal-confirmar .modal-actions button:hover {
+  background: #1976d2;
+}
+
+/* Cancelar */
+#modal-confirmar .modal-actions .btn-secondary {
+  background: #e0e0e0;
+  color: #333;
+}
+#modal-confirmar .modal-actions .btn-secondary:hover {
+  background: #bdbdbd;
+}
+
+
+
+
